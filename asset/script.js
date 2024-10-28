@@ -45,6 +45,8 @@ const allMyaudios = document.querySelectorAll('.myaudios')
 allMyaudios.forEach((val) => {
   // console.log(  val.children[0].nextElementSibling  );
 
+  /////////////////////nextClick//////////////////////
+  
 
   ///////////////////////////////////////////////
 
@@ -68,12 +70,12 @@ allMyaudios.forEach((val) => {
 
 
   playClick.addEventListener('click', (e) => {
-    e.target.style.zIndex = '-100'
+    e.target.style.opacity = '0'
     pauseClick.classList.add('z')
   })
   pauseClick.addEventListener('click', () => {
     pauseClick.classList.remove('z')
-    playClick.style.zIndex = '100'
+    playClick.style.opacity = '1'
   })
 
 
@@ -83,8 +85,9 @@ allMyaudios.forEach((val) => {
   const firstAudio = document.querySelector('#audio1')
 
   firstMyAudio.addEventListener('click', () => {
+    
     leftFigImg.src = 'asset/img/1.jpg'
-    leftFigcaption.innerHTML = 'amma na'
+    leftFigcaption.innerHTML = 'amma na <br> moein'
     ////////////////////////all music//////////////////////////
     secoundAudio.pause()
     secoundAudio.currentTime = 0
@@ -102,7 +105,7 @@ allMyaudios.forEach((val) => {
     sixAudio.currentTime = 0
     ////////////////////////////////////////////////////////
     firstAudio.play()
-    playClick.style.zIndex = '-100'
+    playClick.style.opacity = '0'
     pauseClick.classList.add('z')
     pauseClick.addEventListener('click', () => {
       firstAudio.pause()
@@ -180,7 +183,16 @@ allMyaudios.forEach((val) => {
     }
 
 
-
+    // nextClick.addEventListener('click',()=>{
+    //   firstAudio.pause()
+    //   firstAudio.currentTime='0'
+    //   secoundAudio.play()
+    // })
+    // backClick.addEventListener('click',()=>{
+    //   firstAudio.play()
+    //   secoundAudio.pause()
+    //   secoundAudio.currentTime='0'
+    // })
 
   })
 
@@ -217,7 +229,7 @@ allMyaudios.forEach((val) => {
     sixAudio.currentTime = 0
     //////////////////////////////////////////////////////
     secoundAudio.play()
-    playClick.style.zIndex = '-100'
+    playClick.style.opacity = '0'
     pauseClick.classList.add('z')
     pauseClick.addEventListener('click', () => {
       secoundAudio.pause()
@@ -307,7 +319,7 @@ allMyaudios.forEach((val) => {
 
   /////////////////third music////////////////////////////
   const thirdAudio = document.querySelector('#audio3')
-  console.log(thirdAudio);
+  // console.log(thirdAudio);
 
   val.children[2].addEventListener('click', () => {
     leftFigImg.src = 'asset/img/Ebi-Delpoosh.jpg'
@@ -331,7 +343,7 @@ allMyaudios.forEach((val) => {
     ///////////////////////////////////////////////////
 
     thirdAudio.play()
-    playClick.style.zIndex = '-100'
+    playClick.style.opacity = '0'
     pauseClick.classList.add('z')
     pauseClick.addEventListener('click', () => {
       thirdAudio.pause()
@@ -442,7 +454,7 @@ allMyaudios.forEach((val) => {
     ///////////////////////////////////////////////////
 
     fourAudio.play()
-    playClick.style.zIndex = '-100'
+    playClick.style.opacity = '0'
     pauseClick.classList.add('z')
     pauseClick.addEventListener('click', () => {
       fourAudio.pause()
@@ -551,7 +563,7 @@ allMyaudios.forEach((val) => {
     ///////////////////////////////////////////////////
 
     fiveAudio.play()
-    playClick.style.zIndex = '-100'
+    playClick.style.opacity = '0'
     pauseClick.classList.add('z')
     pauseClick.addEventListener('click', () => {
       fiveAudio.pause()
@@ -658,7 +670,7 @@ allMyaudios.forEach((val) => {
     ///////////////////////////////////////////////////
 
     sixAudio.play()
-    playClick.style.zIndex = '-100'
+    playClick.style.opacity = '0'
     pauseClick.classList.add('z')
     pauseClick.addEventListener('click', () => {
       sixAudio.pause()
@@ -741,4 +753,63 @@ allMyaudios.forEach((val) => {
 
 
 })
+
+//////////////////////////edit/////////////////////////////
+const text = document.querySelector('.edit')
+// console.log(text);
+const strText = text.textContent
+// console.log(strText);
+const splitText = strText.split('');
+// console.log(splitText);
+text.textContent=''
+setTimeout(() => {
+  for(let s=0; s<splitText.length;s++){
+    text.innerHTML+='<h4>'+ splitText[s] + '</h4>';
+  }
+  
+  let char = 0;
+  let timer = setInterval(onTick,50);
+  
+  function onTick(){
+    const span = text.querySelectorAll('h4')[char];
+    // console.log(span);
+    span.classList.add('fade')
+    char++
+    if(char === splitText.length){
+      clearInterval(timer)
+      timer=null
+    }
+  }
+}, 1000);
+
+//////////////////////////back && nest click/////////////////
+
+const songs = document.querySelectorAll("audio"); 
+let currentSongIndex = 0; 
+
+
+function playSong() {
+    songs[currentSongIndex].play();
+}
+
+function stopSong() {
+    songs[currentSongIndex].pause();
+    songs[currentSongIndex].currentTime = 0;
+}
+
+nextClick.addEventListener("click", () => {
+    stopSong(); 
+    currentSongIndex = (currentSongIndex + 1) % songs.length;  
+    playSong();
+     
+});
+
+backClick.addEventListener('click',()=>{
+  stopSong(); 
+  currentSongIndex = (currentSongIndex - 1) % songs.length; 
+  playSong();
+})
+
+
+
 
