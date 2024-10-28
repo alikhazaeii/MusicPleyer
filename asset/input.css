@@ -269,7 +269,7 @@ body {
       position: absolute;
       /* background-color:rgb(221, 8, 8); */
       z-index: 1;
-      left: 200px;
+      left: 250px;
       border-radius: 15px;
       display: flex;
       flex-wrap: wrap;
