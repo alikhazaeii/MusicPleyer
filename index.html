@@ -12,7 +12,25 @@
 <body>
   <main>
   <!-- ////////////////////////////about me///////////////////////// -->
-  <div class="aboutme"></div>
+  <div class="aboutme">
+    <div class="search">
+      <i class="bi bi-search"></i>
+      <p>search your music</p>
+     
+    </div>
+    <ul>
+      <li>
+        <p>likes <br><span>0</span></p>
+        <i class="bi bi-heart"></i>
+
+      </li>
+      <li>
+
+        <p>tracks <br> <span>6</span></p>
+        <i class="bi bi-music-note-beamed"></i>
+      </li>
+    </ul>
+  </div>
   <!-- /////////////////////all audios//////////////////////// -->
   <div class="myaudios">
     <div class="first">
@@ -20,8 +38,10 @@
         <img src="asset/img/1.jpg" alt="">
         <figcaption>
           <span>amma na</span>
-          <span>Lorem ipsum dolor sit amet.</span>
-          <i class="bi bi-play"></i>
+          <span>moein</span>
+          <i class="bi bi-play">
+            <i class="bi bi-three-dots-vertical"></i>
+          </i>
         </figcaption>
       </figure>
       <audio id="audio1" src="asset/audio/Moein - Amma Nemishe.mp3"></audio>
@@ -31,8 +51,10 @@
         <img src="asset/img/2.jpg" alt=" ">
         <figcaption>
           <span>yki dg</span>
-          <span>Lorem ipsum dolor sit amet consectetur </span>
-          <i class="bi bi-play"></i>
+          <span>moein </span>
+          <i class="bi bi-play">
+            <i class="bi bi-three-dots-vertical"></i>
+          </i>
         </figcaption>
       </figure>
       <audio id="audio2" src="asset/audio/Moein - Ba To [320].mp3"></audio>
@@ -43,7 +65,9 @@
         <figcaption>
           <span>delpoosh</span>
           <span>ebi</span>
-          <i class="bi bi-play"></i>
+          <i class="bi bi-play">
+            <i class="bi bi-three-dots-vertical"></i>
+          </i>
         </figcaption>
       </figure>
       <audio id="audio3" src="asset/audio/Ebi - Delpoosh.mp3"></audio>
@@ -52,9 +76,11 @@
       <figure>
         <img src="asset/img/darush.jpg" alt="">
         <figcaption>
-          <span>dobare baz <br> khaham gasht</span>
+          <span>dobare baz  khaham gasht</span>
           <span>darush</span>
-          <i class="bi bi-play"></i>
+          <i class="bi bi-play">
+            <i class="bi bi-three-dots-vertical"></i>
+          </i>
         </figcaption>
       </figure>
       <audio id="audio4" src="asset/audio/Dariush - Dobareh Baz Khahama Gasht [320].mp3"></audio>
@@ -65,7 +91,9 @@
         <figcaption>
           <span>makhloogh</span>
           <span>Googoosh</span>
-          <i class="bi bi-play"></i>
+          <i class="bi bi-play">
+            <i class="bi bi-three-dots-vertical"></i>
+          </i>
         </figcaption>
       </figure>
       <audio id="audio5" src="asset/audio/Googoosh - Makhloogh [320].mp3"></audio>
@@ -76,7 +104,9 @@
         <figcaption>
           <span>hadis mehrabooni</span>
           <span>shadmehr aghili</span>
-          <i class="bi bi-play"></i>
+          <i class="bi bi-play">
+            <i class="bi bi-three-dots-vertical"></i>
+          </i>
         </figcaption>
       </figure>
       <audio id="audio6" src="asset/audio/Shadmehr Aghili-Hadis Mehraboni.mp3"></audio>
@@ -102,12 +132,11 @@
     <!-- ///////////////////////////vasT//////////////////////
       -->
     <div class="tanzimat">
-      <i id="back" class="bi bi-skip-backward-circle"></i>
-
-      <i id="play" class="bi bi-play-circle"></i>
-      <i id="pause" class="bi bi-pause-circle"></i>
-
-      <i id="next" class="bi bi-fast-forward-circle"></i>
+     
+      <i id="back" class="bi bi-skip-backward-fill"></i>
+      <i id="play" class="bi bi-play-fill"></i>
+      <i id="pause" class="bi bi-pause"></i>
+      <i id="next" class="bi bi-skip-forward-fill"></i>
       <i id="like" class="bi bi-heart"></i>
     </div>
     <!-- //////////////////////////////////////////////////////// -->
@@ -119,6 +148,13 @@
       <span>/</span>
       <h3 class="kamel">00:00</h3>
     </div>
+  </div>
+
+  <div class="profile">
+    <img src="asset/img/logo.jpg" alt="">
+    <h1 class="edit">Media Pleyer <br>
+      coded by <br>Ali khazaei</h1>
+    
   </div>
 </main>
 </body>
