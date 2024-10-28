@@ -12,14 +12,14 @@ body {
   justify-content: center;
 
   >.aboutme {
-    width: 800px;
+    width: 1000px;
     height: 200px;
     background: blue;
   }
 
   /* /////////////////////////////////////////////////////// */
   >.myaudios {
-    width: 800px;
+    width: 1000px;
     height: 500px;
     /* background: red; */
 
