@@ -856,10 +856,8 @@ const h1 = document.querySelector('h1')
 
 
 
-function whiteModeToggle() {
-  const isWhiteMode = dark.classList.toggle('whitemode')
-
-
+function applyWhiteMode() {
+   dark.classList.toggle('whitemode')
   main.classList.toggle('bg')
   right.classList.toggle('bg')
   leftFigcaption.classList.toggle('black')
@@ -892,12 +890,48 @@ function whiteModeToggle() {
   })
   h1.classList.toggle('black')
 
-  localStorage.setItem('data', isWhiteMode ? 'ture':'false')
-
 }
 
-if(localStorage.getItem('data') === 'true'){
-  whiteModeToggle()
+function toggleWhiteMode(){
+  const isWhiteModeEnable = dark.classList.toggle('whitemode')
+  
+  main.classList.toggle('bg')
+  right.classList.toggle('bg')
+  leftFigcaption.classList.toggle('black')
+  downMenu.classList.toggle('dbg')
+  playClick.classList.toggle('black')
+  backClick.classList.toggle('black')
+  likeClick.classList.toggle('black')
+  pauseClick.classList.toggle('black')
+  nextClick.classList.toggle('black')
+  fullTime.classList.toggle('black')
+  updateTime.classList.toggle('black')
+  span.forEach(val => {
+    val.classList.toggle('black')
+  })
+  li.forEach(val => {
+    val.classList.toggle('black')
+
+  })
+  i.forEach(e => {
+    e.classList.toggle('black')
+
+  })
+  p.forEach(e => {
+    e.classList.toggle('black')
+
+  })
+  span2.forEach(e => {
+    e.classList.toggle('black')
+
+  })
+  h1.classList.toggle('black')
+  
+  localStorage.setItem('whiteMode',isWhiteModeEnable ? 'true':'false')
 }
 
-dark.addEventListener('click',whiteModeToggle);
+if(localStorage.getItem('whiteMode')==='true'){
+  applyWhiteMode()
+}
+
+dark.addEventListener('click',toggleWhiteMode)
