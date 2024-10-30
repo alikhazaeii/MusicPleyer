@@ -1,5 +1,5 @@
 # musicPleyer
-[DEMO OF MEDIA PLEYER](https://alikhazaeii.github.io/media-/)
+[DEMO OF MEDIA PLEYER](https://alikhazaeii.github.io/MusicPleyer/)
 
 Music Pleyer With darkMode Save In Localstorage
 ![image (28)](https://github.com/user-attachments/assets/864b612c-2578-434e-8597-0c6dcd6b8b20)
