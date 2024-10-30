@@ -15,6 +15,7 @@ const secoundMyAudio = document.querySelector('.secound')
 
 const progressBar = document.querySelector('.progressbar')
 // console.log(progressBar);
+const circle = document.querySelector('.circle')
 
 const updateTime = document.querySelector('div>div>.timeup')
 // console.log(updateTime);
@@ -46,7 +47,7 @@ allMyaudios.forEach((val) => {
   // console.log(  val.children[0].nextElementSibling  );
 
   /////////////////////nextClick//////////////////////
-  
+
 
   ///////////////////////////////////////////////
 
@@ -85,7 +86,7 @@ allMyaudios.forEach((val) => {
   const firstAudio = document.querySelector('#audio1')
 
   firstMyAudio.addEventListener('click', () => {
-    
+
     leftFigImg.src = 'asset/img/1.jpg'
     leftFigcaption.innerHTML = 'amma na <br> moein'
     ////////////////////////all music//////////////////////////
@@ -131,11 +132,13 @@ allMyaudios.forEach((val) => {
       updateTime.innerHTML = `0${min}:${sec}`
       const move = Math.floor(firstAudio.currentTime)
       // console.log(move);
-      progressBar.style.width = `${move * 2}px`
+      progressBar.style.width = `${move * 1.9}px`
+      circle.style.margin = `${move * 1.9}px`
+      circle.style.opacity = '1'
+
       // console.log(firstAudio.currentTime);
 
     })
-
 
 
 
@@ -166,6 +169,7 @@ allMyaudios.forEach((val) => {
 
       const search = (offsetX / rect.width) * 100;
       progressBar.style.width = `${search}%`;
+      circle.style.opacity = '0'
     }
 
     // تابع اتمام درگ
@@ -255,7 +259,9 @@ allMyaudios.forEach((val) => {
       updateTime.innerHTML = `0${min}:${sec}`
       const move = Math.floor(secoundAudio.currentTime)
       // console.log(move);
-      progressBar.style.width = `${move * 2.5}px`
+      progressBar.style.width = `${move * 2.3}px`
+      circle.style.margin = `${move * 2.3}px`
+      circle.style.opacity = '1'
       // console.log(firstAudio.currentTime);
 
     })
@@ -290,6 +296,7 @@ allMyaudios.forEach((val) => {
 
       const search = (offsetX / rect.width) * 100;
       progressBar.style.width = `${search}%`;
+      circle.style.opacity = '0'
     }
 
     // تابع اتمام درگ
@@ -369,7 +376,9 @@ allMyaudios.forEach((val) => {
       updateTime.innerHTML = `0${min}:${sec}`
       const move = Math.floor(thirdAudio.currentTime)
       // console.log(move);
-      progressBar.style.width = `${move * 1.8}px`
+      progressBar.style.width = `${move * 1.7}px`
+      circle.style.margin = `${move * 1.7}px`
+      circle.style.opacity = '1'
       // console.log(firstAudio.currentTime);
 
     })
@@ -404,6 +413,8 @@ allMyaudios.forEach((val) => {
 
       const search = (offsetX / rect.width) * 100;
       progressBar.style.width = `${search}%`;
+
+      circle.style.opacity = '0'
     }
 
     // تابع اتمام درگ
@@ -481,7 +492,9 @@ allMyaudios.forEach((val) => {
       updateTime.innerHTML = `0${min}:${sec}`
       const move = Math.floor(fourAudio.currentTime)
       // console.log(move);
-      progressBar.style.width = `${move * 2.1}px`
+      progressBar.style.width = `${move * 1.9}px`
+      circle.style.margin = `${move * 1.9}px`
+      circle.style.opacity = '1'
       // console.log(firstAudio.currentTime);
 
     })
@@ -516,6 +529,8 @@ allMyaudios.forEach((val) => {
 
       const search = (offsetX / rect.width) * 100;
       progressBar.style.width = `${search}%`;
+
+      circle.style.opacity = '0'
     }
 
     // تابع اتمام درگ
@@ -588,7 +603,9 @@ allMyaudios.forEach((val) => {
       updateTime.innerHTML = `0${min}:${sec}`
       const move = Math.floor(fiveAudio.currentTime)
       // console.log(move);
-      progressBar.style.width = `${move * 2.2}px`
+      progressBar.style.width = `${move * 2}px`
+      circle.style.margin = `${move * 2}px`
+      circle.style.opacity = '1'
       // console.log(firstAudio.currentTime);
 
     })
@@ -623,6 +640,8 @@ allMyaudios.forEach((val) => {
 
       const search = (offsetX / rect.width) * 100;
       progressBar.style.width = `${search}%`;
+
+      circle.style.opacity = '0'
     }
 
     // تابع اتمام درگ
@@ -696,7 +715,9 @@ allMyaudios.forEach((val) => {
       updateTime.innerHTML = `0${min}:${sec}`
       const move = Math.floor(sixAudio.currentTime)
       // console.log(move);
-      progressBar.style.width = `${move * 1.5}px`
+      progressBar.style.width = `${move * 1.35}px`
+      circle.style.margin = `${move * 1.35}px`
+      circle.style.opacity = '1'
       // console.log(firstAudio.currentTime);
 
     })
@@ -731,6 +752,8 @@ allMyaudios.forEach((val) => {
 
       const search = (offsetX / rect.width) * 100;
       progressBar.style.width = `${search}%`;
+
+      circle.style.opacity = '0'
     }
 
     // تابع اتمام درگ
@@ -761,55 +784,120 @@ const strText = text.textContent
 // console.log(strText);
 const splitText = strText.split('');
 // console.log(splitText);
-text.textContent=''
+text.textContent = ''
 setTimeout(() => {
-  for(let s=0; s<splitText.length;s++){
-    text.innerHTML+='<h4>'+ splitText[s] + '</h4>';
+  for (let s = 0; s < splitText.length; s++) {
+    text.innerHTML += '<h4>' + splitText[s] + '</h4>';
   }
-  
+
   let char = 0;
-  let timer = setInterval(onTick,50);
-  
-  function onTick(){
+  let timer = setInterval(onTick, 50);
+
+  function onTick() {
     const span = text.querySelectorAll('h4')[char];
     // console.log(span);
     span.classList.add('fade')
     char++
-    if(char === splitText.length){
+    if (char === splitText.length) {
       clearInterval(timer)
-      timer=null
+      timer = null
     }
   }
 }, 1000);
 
 //////////////////////////back && nest click/////////////////
 
-const songs = document.querySelectorAll("audio"); 
-let currentSongIndex = 0; 
+const songs = document.querySelectorAll("audio");
+let currentSongIndex = 0;
 
 
 function playSong() {
-    songs[currentSongIndex].play();
+  songs[currentSongIndex].play();
 }
 
 function stopSong() {
-    songs[currentSongIndex].pause();
-    songs[currentSongIndex].currentTime = 0;
+  songs[currentSongIndex].pause();
+  songs[currentSongIndex].currentTime = 0;
 }
 
 nextClick.addEventListener("click", () => {
-    stopSong(); 
-    currentSongIndex = (currentSongIndex + 1) % songs.length;  
-    playSong();
-     
+  stopSong();
+  currentSongIndex = (currentSongIndex + 1) % songs.length;
+  playSong();
+
 });
 
-backClick.addEventListener('click',()=>{
-  stopSong(); 
-  currentSongIndex = (currentSongIndex - 1) % songs.length; 
+backClick.addEventListener('click', () => {
+  stopSong();
+  currentSongIndex = (currentSongIndex - 1) % songs.length;
   playSong();
 })
 
+////////////////////////////dark mode with localstorage///////////////////////////////
 
 
 
+
+
+const main = document.querySelector('main')
+const right = document.querySelector('.right')
+const dark = document.querySelector('.dark')
+const downMenu = document.querySelector('.downmenu')
+const span = document.querySelectorAll('span')
+// console.log(span);
+const li = document.querySelectorAll('li')
+const i = document.querySelectorAll('i')
+// console.log(dark);
+const p = document.querySelectorAll('p')
+// console.log(p);
+const span2 = document.querySelectorAll('p>br>span')
+// console.log(span2);
+const h1 = document.querySelector('h1')
+
+
+
+function whiteModeToggle() {
+  const isWhiteMode = dark.classList.toggle('whitemode')
+
+
+  main.classList.toggle('bg')
+  right.classList.toggle('bg')
+  leftFigcaption.classList.toggle('black')
+  downMenu.classList.toggle('dbg')
+  playClick.classList.toggle('black')
+  backClick.classList.toggle('black')
+  likeClick.classList.toggle('black')
+  pauseClick.classList.toggle('black')
+  nextClick.classList.toggle('black')
+  fullTime.classList.toggle('black')
+  updateTime.classList.toggle('black')
+  span.forEach(val => {
+    val.classList.toggle('black')
+  })
+  li.forEach(val => {
+    val.classList.toggle('black')
+
+  })
+  i.forEach(e => {
+    e.classList.toggle('black')
+
+  })
+  p.forEach(e => {
+    e.classList.toggle('black')
+
+  })
+  span2.forEach(e => {
+    e.classList.toggle('black')
+
+  })
+  h1.classList.toggle('black')
+
+  localStorage.setItem('data', isWhiteMode ? 'ture':'false')
+
+}
+
+if(localStorage.getItem('data') === 'true'){
+  whiteModeToggle()
+}
+
+dark.addEventListener('click',whiteModeToggle);
