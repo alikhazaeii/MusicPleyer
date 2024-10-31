@@ -1,4 +1,13 @@
 # musicPleyer
+
+<strong> Language : </strong>
+<table align='center'>
+<td>        <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="65" height="65" />
+</td>
+<td>
+  
+</td>
+
 [DEMO OF MEDIA PLEYER](https://alikhazaeii.github.io/MusicPleyer/)
 
 Music Pleyer With darkMode Save In Localstorage
