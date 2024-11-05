@@ -1,781 +1,245 @@
-const backClick = document.querySelector('#back')
-// console.log(backClick);
+const songs = [
+  // {
+  //   music: "",
+  //   artist: 'wellcome',
+  //   src: "",
+  //   img: "asset/img/images.jfif"
+  // },
+  {
+    music: "Ba To",
+    artist: 'moein',
+    src: "asset/audio/Moein - Ba To [320].mp3",
+    img: "asset/img/1.jpg"
+  },
+  {
+    music: "dobare baz khaham gasht",
+    artist: 'darush',
+    src: "asset/audio/Dariush - Dobareh Baz Khahama Gasht [320].mp3",
+    img: "asset/img/darush.jpg"
+  },
+  {
+    music: "hadis mehrabooni",
+    artist: 'shadmehr aghili',
+    src: "asset/audio/Shadmehr Aghili-Hadis Mehraboni.mp3",
+    img: "asset/img/shadmehr-hadis.jpg"
+  },
+  {
+    music: "makhloogh",
+    artist: 'googoosh',
+    src: "asset/audio/Googoosh - Makhloogh [320].mp3",
+    img: "asset/img/Googoosh.jpg"
+  },
+  {
+    music: "delpoosh",
+    artist: 'ebi',
+    src: "asset/audio/Ebi - Delpoosh.mp3",
+    img: "asset/img/Ebi-Delpoosh.jpg"
+  },
+  
+  {
+    music: "amma nemishe",
+    artist: 'moein',
+    src: "asset/audio/Moein - Amma Nemishe.mp3",
+    img: "asset/img/2.jpg"
+  },
+  {
+    music: "nistametun",
+    artist: 'shaye',
+    src: "asset/audio/Shayea - Nistametoon [320].mp3",
+    img: "asset/img/shaye.jfif"
+  },
+  {
+    music: "haghighat",
+    artist: 'hossein',
+    src: "asset/audio/Ho3ein - Haghighat.mp3",
+    img: "asset/img/hossein.jfif"
+  },
+  {
+    music: "edame midam",
+    artist: 'yas',
+    src: "asset/audio/yas_edame_midam 128.mp3",
+    img: "asset/img/Yas-Man-Edameh-Midam.jpg"
+  },
+  {
+    music: "alo khoda",
+    artist: 'hamid sefat',
+    src: "asset/audio/Hamid Sefat - Alo Khoda.mp3",
+    img: "asset/img/hamid-sefat-alo-khoda1.jpg"
+  },
+  {
+    music: "mama",
+    artist: 'mehrad hidden',
+    src: "asset/audio/Sijal _ Mehrad Hidden _ KAVIANO - Mama.mp3",
+    img: "asset/img/دانلود-اهنگ-های-مهراد-هیدن.webp"
+  },
+  {
+    music: "tashakor az madaram",
+    artist: 'bahram',
+    src: "asset/audio/Bahrdam-Tashakor-az-madaram.mp3",
+    img: "asset/img/bahram.webp"
+  },
+]
+
+const audio = document.querySelector('#audio')
+console.log(audio);
+
 const playClick = document.querySelector('#play')
-// console.log(playClick);
+console.log(playClick);
+
 const pauseClick = document.querySelector('#pause')
+console.log(pauseClick);
+
 const nextClick = document.querySelector('#next')
-const likeClick = document.querySelector('#like')
-// console.log(likeClick);
-
-
-const firstMyAudio = document.querySelector('.first')
-// console.log(firstMyaudio);
-const secoundMyAudio = document.querySelector('.secound')
-// console.log(secoundMyAudio);
-
-const progressBar = document.querySelector('.progressbar')
-// console.log(progressBar);
-const circle = document.querySelector('.circle')
-
-const updateTime = document.querySelector('div>div>.timeup')
-// console.log(updateTime);
-
-const fullTime = document.querySelector('div>div>.kamel')
-// console.log(fullTime);
-
-const leftFigImg = document.querySelector('.samtechap>img')
-// console.log(leftFigImg);
-const leftFigcaption = document.querySelector('.samtechap>figcaption')
-// console.log(leftFigcaption);
-
-
-//////////////////////////alll musics///////////////////////
-
-
-
-
-
-
-
-
-
-
-
-const allMyaudios = document.querySelectorAll('.myaudios')
-// console.log(allMyaudios);
-allMyaudios.forEach((val) => {
-  // console.log(  val.children[0].nextElementSibling  );
-
-  /////////////////////nextClick//////////////////////
-
-
-  ///////////////////////////////////////////////
-
-  ///////////////////////drag progress/////////////////////////
-  const progress = document.querySelector('div>.progress')
-  // console.log(progress);
-
-  flag = false
-  /////////////////////////////////////////////////////////////
-
-
-
-  likeClick.addEventListener('click', () => {
-    likeClick.classList.toggle('like')
-  })
-
-
-
-
-
-
-
-  playClick.addEventListener('click', (e) => {
-    e.target.style.opacity = '0'
-    pauseClick.classList.add('z')
-  })
-  pauseClick.addEventListener('click', () => {
-    pauseClick.classList.remove('z')
-    playClick.style.opacity = '1'
-  })
-
-
-  /////////////////first music////////////////////////////
-
-
-  const firstAudio = document.querySelector('#audio1')
-
-  firstMyAudio.addEventListener('click', () => {
-
-    leftFigImg.src = 'asset/img/1.jpg'
-    leftFigcaption.innerHTML = 'amma na <br> moein'
-    ////////////////////////all music//////////////////////////
-    secoundAudio.pause()
-    secoundAudio.currentTime = 0
-
-    thirdAudio.pause()
-    thirdAudio.currentTime = 0
-
-    fourAudio.pause()
-    fourAudio.currentTime = 0
-
-    fiveAudio.pause()
-    fiveAudio.currentTime = 0
-
-    sixAudio.pause()
-    sixAudio.currentTime = 0
-    ////////////////////////////////////////////////////////
-    firstAudio.play()
-    playClick.style.opacity = '0'
-    pauseClick.classList.add('z')
-    pauseClick.addEventListener('click', () => {
-      firstAudio.pause()
-    })
-    playClick.addEventListener('click', () => {
-      firstAudio.play()
-
-      secoundAudio.pause()
-
-      thirdAudio.pause()
-
-      fourAudio.pause()
-
-      fiveAudio.pause()
-
-      sixAudio.pause()
-    })
-    fullTime.innerHTML = '04:09'
-    firstAudio.addEventListener('timeupdate', () => {
-      // console.log(firstAudio.currentTime + 'duration');
-      const min = Math.floor(firstAudio.currentTime / 60)
-      const sec = Math.floor(firstAudio.currentTime % 60)
-      updateTime.innerHTML = `0${min}:${sec}`
-      const move = Math.floor(firstAudio.currentTime)
-      // console.log(move);
-      progressBar.style.width = `${move * 1.9}px`
-      circle.style.margin = `${move * 1.9}px`
-      circle.style.opacity = '1'
-
-      // console.log(firstAudio.currentTime);
-
-    })
-
-
-
-    /////////////////////end of audio//////////////////////////
-
-    ////////////////////////////progressbar drag/////////////////////
-    progressBar.addEventListener('mousedown', (e) => {
-      flag = true;
-      document.addEventListener('mousemove', onDrag);
-      document.addEventListener('mouseup', stopDrag);
-    });
-
-    // تابع درگ
-    function onDrag(e) {
-      const rect = progress.getBoundingClientRect();
-      // console.log(rect);
-
-      let offsetX = e.clientX - rect.left;
-
-      // محدود کردن دایره داخل نوار پیشرفت
-      if (offsetX < 0) {
-        offsetX = 0
-      }
-      if (offsetX > rect.width) {
-        offsetX = rect.width
-
-      }
-
-      const search = (offsetX / rect.width) * 100;
-      progressBar.style.width = `${search}%`;
-      circle.style.opacity = '0'
-    }
-
-    // تابع اتمام درگ
-    function stopDrag(e) {
-      flag = false;
-      document.removeEventListener('mousemove', onDrag);
-      document.removeEventListener('mouseup', stopDrag);
-
-      const rect = progress.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const search = offsetX / rect.width;
-
-      // تنظیم موقعیت جدید پخش آهنگ
-      firstAudio.currentTime = search * firstAudio.duration;
-    }
-
-
-    // nextClick.addEventListener('click',()=>{
-    //   firstAudio.pause()
-    //   firstAudio.currentTime='0'
-    //   secoundAudio.play()
-    // })
-    // backClick.addEventListener('click',()=>{
-    //   firstAudio.play()
-    //   secoundAudio.pause()
-    //   secoundAudio.currentTime='0'
-    // })
-
-  })
-
-  ///////////////////////////////end first/////////////////////////////
-
-  const secoundAudio = document.querySelector('#audio2')
-  //////////////////////////////next click///////////////////////////////
-
-  nextClick.addEventListener('click', () => {
-
-  })
-
-
-  /////////////////secound music////////////////////////////
-
-
-  val.children[1].addEventListener('click', () => {
-    leftFigImg.src = 'asset/img/2.jpg'
-    leftFigcaption.innerHTML = 'yeki dg <br>moein'
-    /////////////////////////all music//////////////////////
-    firstAudio.pause()
-    firstAudio.currentTime = 0
-
-    thirdAudio.pause()
-    thirdAudio.currentTime = 0
-
-    fourAudio.pause()
-    fourAudio.currentTime = 0
-
-    fiveAudio.pause()
-    fiveAudio.currentTime = 0
-
-    sixAudio.pause()
-    sixAudio.currentTime = 0
-    //////////////////////////////////////////////////////
-    secoundAudio.play()
-    playClick.style.opacity = '0'
-    pauseClick.classList.add('z')
-    pauseClick.addEventListener('click', () => {
-      secoundAudio.pause()
-    })
-    playClick.addEventListener('click', () => {
-      secoundAudio.play()
-
-      firstAudio.pause()
-
-      thirdAudio.pause()
-
-      fourAudio.pause()
-
-      fiveAudio.pause()
-
-      sixAudio.pause()
-    })
-    fullTime.innerHTML = '03:27'
-    secoundAudio.addEventListener('timeupdate', () => {
-      // console.log(firstAudio.currentTime + 'duration');
-      const min = Math.floor(secoundAudio.currentTime / 60)
-      const sec = Math.floor(secoundAudio.currentTime % 60)
-      updateTime.innerHTML = `0${min}:${sec}`
-      const move = Math.floor(secoundAudio.currentTime)
-      // console.log(move);
-      progressBar.style.width = `${move * 2.3}px`
-      circle.style.margin = `${move * 2.3}px`
-      circle.style.opacity = '1'
-      // console.log(firstAudio.currentTime);
-
-    })
-
-
-
-
-    /////////////////////end of audio//////////////////////////
-
-    ////////////////////////////progressbar drag/////////////////////
-    progressBar.addEventListener('mousedown', (e) => {
-      flag = true;
-      document.addEventListener('mousemove', onDrag);
-      document.addEventListener('mouseup', stopDrag);
-    });
-
-    // تابع درگ
-    function onDrag(e) {
-      const rect = progress.getBoundingClientRect();
-      // console.log(rect);
-
-      let offsetX = e.clientX - rect.left;
-
-      // محدود کردن دایره داخل نوار پیشرفت
-      if (offsetX < 0) {
-        offsetX = 0
-      }
-      if (offsetX > rect.width) {
-        offsetX = rect.width
-
-      }
-
-      const search = (offsetX / rect.width) * 100;
-      progressBar.style.width = `${search}%`;
-      circle.style.opacity = '0'
-    }
-
-    // تابع اتمام درگ
-    function stopDrag(e) {
-      flag = false;
-      document.removeEventListener('mousemove', onDrag);
-      document.removeEventListener('mouseup', stopDrag);
-
-      const rect = progress.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const search = offsetX / rect.width;
-
-      // تنظیم موقعیت جدید پخش آهنگ
-      secoundAudio.currentTime = search * secoundAudio.duration;
-    }
-
-  })
-
-  ///////////////////////////////end secound/////////////////////////////
-
-
-
-
-
-
-
-
-  /////////////////third music////////////////////////////
-  const thirdAudio = document.querySelector('#audio3')
-  // console.log(thirdAudio);
-
-  val.children[2].addEventListener('click', () => {
-    leftFigImg.src = 'asset/img/Ebi-Delpoosh.jpg'
-    leftFigcaption.innerHTML = 'Delpoosh <br>Ebi'
-
-    ///////////////////all music///////////////////////
-    firstAudio.pause()
-    firstAudio.currentTime = 0
-
-    secoundAudio.pause()
-    secoundAudio.currentTime = 0
-
-    fourAudio.pause()
-    fourAudio.currentTime = 0
-
-    fiveAudio.pause()
-    fiveAudio.currentTime = 0
-
-    sixAudio.pause()
-    sixAudio.currentTime = 0
-    ///////////////////////////////////////////////////
-
-    thirdAudio.play()
-    playClick.style.opacity = '0'
-    pauseClick.classList.add('z')
-    pauseClick.addEventListener('click', () => {
-      thirdAudio.pause()
-    })
-    playClick.addEventListener('click', () => {
-      thirdAudio.play()
-
-      firstAudio.pause()
-
-      secoundAudio.pause()
-
-      fourAudio.pause()
-
-      fiveAudio.pause()
-
-      sixAudio.pause()
-    })
-    fullTime.innerHTML = '04:42'
-    thirdAudio.addEventListener('timeupdate', () => {
-      // console.log(firstAudio.currentTime + 'duration');
-      const min = Math.floor(thirdAudio.currentTime / 60)
-      const sec = Math.floor(thirdAudio.currentTime % 60)
-      updateTime.innerHTML = `0${min}:${sec}`
-      const move = Math.floor(thirdAudio.currentTime)
-      // console.log(move);
-      progressBar.style.width = `${move * 1.7}px`
-      circle.style.margin = `${move * 1.7}px`
-      circle.style.opacity = '1'
-      // console.log(firstAudio.currentTime);
-
-    })
-
-
-
-
-    /////////////////////end of audio//////////////////////////
-
-    ////////////////////////////progressbar drag/////////////////////
-    progressBar.addEventListener('mousedown', (e) => {
-      flag = true;
-      document.addEventListener('mousemove', onDrag);
-      document.addEventListener('mouseup', stopDrag);
-    });
-
-    // تابع درگ
-    function onDrag(e) {
-      const rect = progress.getBoundingClientRect();
-      // console.log(rect);
-
-      let offsetX = e.clientX - rect.left;
-
-      // محدود کردن دایره داخل نوار پیشرفت
-      if (offsetX < 0) {
-        offsetX = 0
-      }
-      if (offsetX > rect.width) {
-        offsetX = rect.width
-
-      }
-
-      const search = (offsetX / rect.width) * 100;
-      progressBar.style.width = `${search}%`;
-
-      circle.style.opacity = '0'
-    }
-
-    // تابع اتمام درگ
-    function stopDrag(e) {
-      flag = false;
-      document.removeEventListener('mousemove', onDrag);
-      document.removeEventListener('mouseup', stopDrag);
-
-      const rect = progress.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const search = offsetX / rect.width;
-
-      // تنظیم موقعیت جدید پخش آهنگ
-      thirdAudio.currentTime = search * thirdAudio.duration;
-    }
-
-  })
-
-  ///////////////////////////////end third/////////////////////////////
-
-
-
-
-
-
-  /////////////////four music////////////////////////////
-  const fourAudio = document.querySelector('#audio4')
-
-  val.children[3].addEventListener('click', () => {
-    leftFigImg.src = 'asset/img/darush.jpg'
-    leftFigcaption.innerHTML = 'Dobare baz khaham gasht <br>darush'
-
-    ///////////////////all music///////////////////////
-    firstAudio.pause()
-    firstAudio.currentTime = 0
-
-    secoundAudio.pause()
-    secoundAudio.currentTime = 0
-
-    thirdAudio.pause()
-    thirdAudio.currentTime = 0
-
-    fiveAudio.pause()
-    fiveAudio.currentTime = 0
-
-    sixAudio.pause()
-    sixAudio.currentTime = 0
-    ///////////////////////////////////////////////////
-
-    fourAudio.play()
-    playClick.style.opacity = '0'
-    pauseClick.classList.add('z')
-    pauseClick.addEventListener('click', () => {
-      fourAudio.pause()
-    })
-    playClick.addEventListener('click', () => {
-      fourAudio.play()
-
-      firstAudio.pause()
-
-      secoundAudio.pause()
-
-      thirdAudio.pause()
-
-
-      fiveAudio.pause()
-
-      sixAudio.pause()
-    })
-    fullTime.innerHTML = '03:58'
-    fourAudio.addEventListener('timeupdate', () => {
-      // console.log(firstAudio.currentTime + 'duration');
-      const min = Math.floor(fourAudio.currentTime / 60)
-      const sec = Math.floor(fourAudio.currentTime % 60)
-      updateTime.innerHTML = `0${min}:${sec}`
-      const move = Math.floor(fourAudio.currentTime)
-      // console.log(move);
-      progressBar.style.width = `${move * 1.9}px`
-      circle.style.margin = `${move * 1.9}px`
-      circle.style.opacity = '1'
-      // console.log(firstAudio.currentTime);
-
-    })
-
-
-
-
-    /////////////////////end of audio//////////////////////////
-
-    ////////////////////////////progressbar drag/////////////////////
-    progressBar.addEventListener('mousedown', (e) => {
-      flag = true;
-      document.addEventListener('mousemove', onDrag);
-      document.addEventListener('mouseup', stopDrag);
-    });
-
-    // تابع درگ
-    function onDrag(e) {
-      const rect = progress.getBoundingClientRect();
-      // console.log(rect);
-
-      let offsetX = e.clientX - rect.left;
-
-      // محدود کردن دایره داخل نوار پیشرفت
-      if (offsetX < 0) {
-        offsetX = 0
-      }
-      if (offsetX > rect.width) {
-        offsetX = rect.width
-
-      }
-
-      const search = (offsetX / rect.width) * 100;
-      progressBar.style.width = `${search}%`;
-
-      circle.style.opacity = '0'
-    }
-
-    // تابع اتمام درگ
-    function stopDrag(e) {
-      flag = false;
-      document.removeEventListener('mousemove', onDrag);
-      document.removeEventListener('mouseup', stopDrag);
-
-      const rect = progress.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const search = offsetX / rect.width;
-
-      // تنظیم موقعیت جدید پخش آهنگ
-      fourAudio.currentTime = search * fourAudio.duration;
-    }
-
-  })
-
-  ///////////////////////////////end four/////////////////////////////
-
-
-
-  /////////////////five music////////////////////////////
-  const fiveAudio = document.querySelector('#audio5')
-
-  val.children[4].addEventListener('click', () => {
-    leftFigImg.src = 'asset/img/Googoosh.jpg'
-    leftFigcaption.innerHTML = 'makhloogh <br>Googoosh'
-
-    ///////////////////all music///////////////////////
-    firstAudio.pause()
-    firstAudio.currentTime = 0
-
-    secoundAudio.pause()
-    secoundAudio.currentTime = 0
-
-    thirdAudio.pause()
-    thirdAudio.currentTime = 0
-
-    fourAudio.pause()
-    fourAudio.currentTime = 0
-
-    sixAudio.pause()
-    sixAudio.currentTime = 0
-    ///////////////////////////////////////////////////
-
-    fiveAudio.play()
-    playClick.style.opacity = '0'
-    pauseClick.classList.add('z')
-    pauseClick.addEventListener('click', () => {
-      fiveAudio.pause()
-    })
-    playClick.addEventListener('click', () => {
-      fiveAudio.play()
-      firstAudio.pause()
-
-      secoundAudio.pause()
-
-      thirdAudio.pause()
-
-      fourAudio.pause()
-
-      sixAudio.pause()
-    })
-    fullTime.innerHTML = '03:52'
-    fiveAudio.addEventListener('timeupdate', () => {
-      // console.log(firstAudio.currentTime + 'duration');
-      const min = Math.floor(fiveAudio.currentTime / 60)
-      const sec = Math.floor(fiveAudio.currentTime % 60)
-      updateTime.innerHTML = `0${min}:${sec}`
-      const move = Math.floor(fiveAudio.currentTime)
-      // console.log(move);
-      progressBar.style.width = `${move * 2}px`
-      circle.style.margin = `${move * 2}px`
-      circle.style.opacity = '1'
-      // console.log(firstAudio.currentTime);
-
-    })
-
-
-
-
-    /////////////////////end of audio//////////////////////////
-
-    ////////////////////////////progressbar drag/////////////////////
-    progressBar.addEventListener('mousedown', (e) => {
-      flag = true;
-      document.addEventListener('mousemove', onDrag);
-      document.addEventListener('mouseup', stopDrag);
-    });
-
-    // تابع درگ
-    function onDrag(e) {
-      const rect = progress.getBoundingClientRect();
-      // console.log(rect);
-
-      let offsetX = e.clientX - rect.left;
-
-      // محدود کردن دایره داخل نوار پیشرفت
-      if (offsetX < 0) {
-        offsetX = 0
-      }
-      if (offsetX > rect.width) {
-        offsetX = rect.width
-
-      }
-
-      const search = (offsetX / rect.width) * 100;
-      progressBar.style.width = `${search}%`;
-
-      circle.style.opacity = '0'
-    }
-
-    // تابع اتمام درگ
-    function stopDrag(e) {
-      flag = false;
-      document.removeEventListener('mousemove', onDrag);
-      document.removeEventListener('mouseup', stopDrag);
-
-      const rect = progress.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const search = offsetX / rect.width;
-
-      // تنظیم موقعیت جدید پخش آهنگ
-      fiveAudio.currentTime = search * fiveAudio.duration;
-    }
-
-  })
-
-  ///////////////////////////////end five/////////////////////////////
-
-
-
-  /////////////////six music////////////////////////////
-  const sixAudio = document.querySelector('#audio6')
-
-  val.children[5].addEventListener('click', () => {
-    leftFigImg.src = 'asset/img/shadmehr-hadis.jpg'
-    leftFigcaption.innerHTML = 'shadmehr<br>hadis-mehrabooni'
-
-    ///////////////////all music///////////////////////
-    firstAudio.pause()
-    firstAudio.currentTime = 0
-
-    secoundAudio.pause()
-    secoundAudio.currentTime = 0
-
-    thirdAudio.pause()
-    thirdAudio.currentTime = 0
-
-    fourAudio.pause()
-    fourAudio.currentTime = 0
-
-    fiveAudio.pause()
-    fiveAudio.currentTime = 0
-    ///////////////////////////////////////////////////
-
-    sixAudio.play()
-    playClick.style.opacity = '0'
-    pauseClick.classList.add('z')
-    pauseClick.addEventListener('click', () => {
-      sixAudio.pause()
-    })
-    playClick.addEventListener('click', () => {
-      firstAudio.pause()
-
-      secoundAudio.pause()
-
-      thirdAudio.pause()
-
-      fourAudio.pause()
-
-      fiveAudio.pause()
-
-      sixAudio.play()
-    })
-    fullTime.innerHTML = '05:42'
-    sixAudio.addEventListener('timeupdate', () => {
-      // console.log(firstAudio.currentTime + 'duration');
-      const min = Math.floor(sixAudio.currentTime / 60)
-      const sec = Math.floor(sixAudio.currentTime % 60)
-      updateTime.innerHTML = `0${min}:${sec}`
-      const move = Math.floor(sixAudio.currentTime)
-      // console.log(move);
-      progressBar.style.width = `${move * 1.35}px`
-      circle.style.margin = `${move * 1.35}px`
-      circle.style.opacity = '1'
-      // console.log(firstAudio.currentTime);
-
-    })
-
-
-
-
-    /////////////////////end of audio//////////////////////////
-
-    ////////////////////////////progressbar drag/////////////////////
-    progressBar.addEventListener('mousedown', (e) => {
-      flag = true;
-      document.addEventListener('mousemove', onDrag);
-      document.addEventListener('mouseup', stopDrag);
-    });
-
-    // تابع درگ
-    function onDrag(e) {
-      const rect = progress.getBoundingClientRect();
-      // console.log(rect);
-
-      let offsetX = e.clientX - rect.left;
-
-      // محدود کردن دایره داخل نوار پیشرفت
-      if (offsetX < 0) {
-        offsetX = 0
-      }
-      if (offsetX > rect.width) {
-        offsetX = rect.width
-
-      }
-
-      const search = (offsetX / rect.width) * 100;
-      progressBar.style.width = `${search}%`;
-
-      circle.style.opacity = '0'
-    }
-
-    // تابع اتمام درگ
-    function stopDrag(e) {
-      flag = false;
-      document.removeEventListener('mousemove', onDrag);
-      document.removeEventListener('mouseup', stopDrag);
-
-      const rect = progress.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const search = offsetX / rect.width;
-
-      // تنظیم موقعیت جدید پخش آهنگ
-      sixAudio.currentTime = search * sixAudio.duration;
-    }
-
-  })
-
-  ///////////////////////////////end six/////////////////////////////
-
-
+console.log(nextClick);
+
+const backClick = document.querySelector('#back')
+console.log(backClick);
+
+const artist = document.querySelector('.artist')
+console.log(artist);
+const music = document.querySelector('.music')
+console.log(music);
+const img = document.querySelector('.tanzimat>.moshakhasat>img')
+console.log(img);
+
+const fullTime = document.querySelector('.duration')
+console.log(fullTime);
+const updatetime = document.querySelector('.curenttime')
+console.log(updatetime);
+
+
+let flag = 0
+
+const songItems = document.querySelectorAll('.flex>figure')
+console.log(songItems);
+
+songItems.forEach((item , i) => {
+  item.addEventListener('click', () => {
+      const index = item.getAttribute('data-index'); 
+      const song = songs[i]; 
+
+      console.log(index);
+      audio.src = song.src
+      img.src = song.img
+      artist.textContent = song.artist
+      music.textContent = song.music
+      audio.play();
+      console.log(item + i);
+
+  });
+});
+function allSong(i) {
+  const song = songs[i]
+  audio.src = song.src
+  img.src = song.img
+  artist.textContent = song.artist
+  music.textContent = song.music
+
+}
+
+playClick.addEventListener('click', () => {
+  audio.play()
 })
+
+pauseClick.addEventListener('click', () => {
+  audio.pause()
+})
+
+nextClick.addEventListener('click', () => {
+  flag = (flag - 1 + songs.length) % songs.length;
+  allSong(flag)
+  audio.play()
+})
+
+backClick.addEventListener('click', () => {
+  
+
+  flag = (flag + 1) % songs.length
+  allSong(flag)
+  audio.play()
+})
+
+const progress = document.querySelector('.progress')
+const progressbar = document.querySelector('.progressbar');
+
+audio.addEventListener('timeupdate', updateProgress);
+
+progress.addEventListener('click', setProgress);
+
+function updateProgress() {
+  const progressPercent = (audio.currentTime / audio.duration) * 100;
+  progressbar.style.left = `${progressPercent}%`;
+}
+
+function setProgress(e) {
+  const width = progress.clientWidth;
+  const clickX = e.offsetX;
+  const duration = audio.duration;
+  audio.currentTime = (clickX / width) * duration;
+}
+
+
+
+
+audio.addEventListener('loadedmetadata', updateTotalTime);
+audio.addEventListener('timeupdate', updateCurrentTime);
+
+function updateTotalTime() {
+  const duration = audio.duration;
+  updatetime.textContent = formatTime(duration);
+}
+
+function updateCurrentTime() {
+  const currentTime = audio.currentTime;
+  fullTime.textContent = formatTime(currentTime);
+  updateProgress(); // به‌روزرسانی نوار پیشرفت
+}
+
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+  return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+}
+
+//////////////////////volume//////////////////
+
+const volumeSlider = document.getElementById('volume');
+
+
+audio.volume = volumeSlider.value;
+
+
+volumeSlider.addEventListener('input', (e) => {
+  audio.volume = e.target.value;
+});
+
+
+const turnOn = document.querySelector('#turnon')
+console.log(turnOn);
+
+const mute = document.querySelector('#mute')
+
+let isMute = false
+turnOn.addEventListener('click', (e) => {
+  if (isMute) {
+
+    audio.volume = volumeSlider.value;
+
+    turnOn.style.opacity = '0'
+    isMute = false;
+  } else {
+
+    turnOn.style.opacity = '1'
+
+    audio.volume = 0;
+    isMute = true;
+  }
+})
+
+
+allSong(flag)
+
+
 
 //////////////////////////edit/////////////////////////////
 const text = document.querySelector('.edit')
@@ -804,134 +268,3 @@ setTimeout(() => {
     }
   }
 }, 1000);
-
-//////////////////////////back && nest click/////////////////
-
-const songs = document.querySelectorAll("audio");
-let currentSongIndex = 0;
-
-
-function playSong() {
-  songs[currentSongIndex].play();
-}
-
-function stopSong() {
-  songs[currentSongIndex].pause();
-  songs[currentSongIndex].currentTime = 0;
-}
-
-nextClick.addEventListener("click", () => {
-  stopSong();
-  currentSongIndex = (currentSongIndex + 1) % songs.length;
-  playSong();
-
-});
-
-backClick.addEventListener('click', () => {
-  stopSong();
-  currentSongIndex = (currentSongIndex - 1) % songs.length;
-  playSong();
-})
-
-////////////////////////////dark mode with localstorage///////////////////////////////
-
-
-
-
-
-const main = document.querySelector('main')
-const right = document.querySelector('.right')
-const dark = document.querySelector('.dark')
-const downMenu = document.querySelector('.downmenu')
-const span = document.querySelectorAll('span')
-// console.log(span);
-const li = document.querySelectorAll('li')
-const i = document.querySelectorAll('i')
-// console.log(dark);
-const p = document.querySelectorAll('p')
-// console.log(p);
-const span2 = document.querySelectorAll('p>br>span')
-// console.log(span2);
-const h1 = document.querySelector('h1')
-
-
-
-function applyWhiteMode() {
-   dark.classList.toggle('whitemode')
-  main.classList.toggle('bg')
-  right.classList.toggle('bg')
-  leftFigcaption.classList.toggle('black')
-  downMenu.classList.toggle('dbg')
-  playClick.classList.toggle('black')
-  backClick.classList.toggle('black')
-  likeClick.classList.toggle('black')
-  pauseClick.classList.toggle('black')
-  nextClick.classList.toggle('black')
-  fullTime.classList.toggle('black')
-  updateTime.classList.toggle('black')
-  span.forEach(val => {
-    val.classList.toggle('black')
-  })
-  li.forEach(val => {
-    val.classList.toggle('black')
-
-  })
-  i.forEach(e => {
-    e.classList.toggle('black')
-
-  })
-  p.forEach(e => {
-    e.classList.toggle('black')
-
-  })
-  span2.forEach(e => {
-    e.classList.toggle('black')
-
-  })
-  h1.classList.toggle('black')
-
-}
-
-function toggleWhiteMode(){
-  const isWhiteModeEnable = dark.classList.toggle('whitemode')
-  
-  main.classList.toggle('bg')
-  right.classList.toggle('bg')
-  leftFigcaption.classList.toggle('black')
-  downMenu.classList.toggle('dbg')
-  playClick.classList.toggle('black')
-  backClick.classList.toggle('black')
-  likeClick.classList.toggle('black')
-  pauseClick.classList.toggle('black')
-  nextClick.classList.toggle('black')
-  fullTime.classList.toggle('black')
-  updateTime.classList.toggle('black')
-  span.forEach(val => {
-    val.classList.toggle('black')
-  })
-  li.forEach(val => {
-    val.classList.toggle('black')
-
-  })
-  i.forEach(e => {
-    e.classList.toggle('black')
-
-  })
-  p.forEach(e => {
-    e.classList.toggle('black')
-
-  })
-  span2.forEach(e => {
-    e.classList.toggle('black')
-
-  })
-  h1.classList.toggle('black')
-  
-  localStorage.setItem('whiteMode',isWhiteModeEnable ? 'true':'false')
-}
-
-if(localStorage.getItem('whiteMode')==='true'){
-  applyWhiteMode()
-}
-
-dark.addEventListener('click',toggleWhiteMode)
