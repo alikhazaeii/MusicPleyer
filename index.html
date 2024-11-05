@@ -4,174 +4,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media pleyer</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>musicpleyer</title>
   <link rel="stylesheet" href="asset/input.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-  <main>
-  <!-- ////////////////////////////about me///////////////////////// -->
-  <div class="aboutme">
+  <nav>
+    <img src="asset/img/logo.jfif" alt="">
+    <ul>
+      <li><i class="bi bi-house-fill"></i>home</li>
+      <li><i class="bi bi-files"></i>brows</li>
+      <li><i class="bi bi-search"></i>search</li>
+      <li><i class="bi bi-calendar3-event-fill"></i>evnts</li>
+      <li><i class="bi bi-music-note-list"></i>playlist</li>
+    </ul>
+  </nav>
+  <div class="horizontal">
+    <i class="bi bi-arrow-left"></i>
+    <i class="bi bi-arrow-right"></i>
     <div class="search">
       <i class="bi bi-search"></i>
       <p>search your music</p>
-     
     </div>
-    <ul>
-      <li>
-        <p>likes <br><span>0</span></p>
-        <i class="bi bi-heart"></i>
-
-      </li>
-      <li>
-
-        <p>tracks <br> <span>6</span></p>
-        <i class="bi bi-music-note-beamed"></i>
-      </li>
-    </ul>
-   
+    <button>Log in</button>
   </div>
-  <div class="right">
-    <div class="dark"></div>
-  </div>
-  <!-- /////////////////////all audios//////////////////////// -->
-  <div class="myaudios">
-    <div class="first">
-      <figure>
-        <img src="asset/img/1.jpg" alt="">
-        <figcaption>
-          <span>amma na</span>
-          <span>moein</span>
-          <i class="bi bi-play">
-            <i class="bi bi-three-dots-vertical"></i>
-          </i>
-        </figcaption>
-      </figure>
-      <audio id="audio1" src="asset/audio/Moein - Amma Nemishe.mp3"></audio>
-    </div>
-    <div class="secound">
-      <figure>
-        <img src="asset/img/2.jpg" alt=" ">
-        <figcaption>
-          <span>yki dg</span>
-          <span>moein </span>
-          <i class="bi bi-play">
-            <i class="bi bi-three-dots-vertical"></i>
-          </i>
-        </figcaption>
-      </figure>
-      <audio id="audio2" src="asset/audio/Moein - Ba To [320].mp3"></audio>
-    </div>
-    <div class="third">
-      <figure>
-        <img src="asset/img/Ebi-Delpoosh.jpg" alt="">
-        <figcaption>
-          <span>delpoosh</span>
-          <span>ebi</span>
-          <i class="bi bi-play">
-            <i class="bi bi-three-dots-vertical"></i>
-          </i>
-        </figcaption>
-      </figure>
-      <audio id="audio3" src="asset/audio/Ebi - Delpoosh.mp3"></audio>
-    </div>
-    <div class="four">
-      <figure>
-        <img src="asset/img/darush.jpg" alt="">
-        <figcaption>
-          <span>dobare baz  khaham gasht</span>
-          <span>darush</span>
-          <i class="bi bi-play">
-            <i class="bi bi-three-dots-vertical"></i>
-          </i>
-        </figcaption>
-      </figure>
-      <audio id="audio4" src="asset/audio/Dariush - Dobareh Baz Khahama Gasht [320].mp3"></audio>
-    </div>
-    <div class="five">
-      <figure>
-        <img src="asset/img/Googoosh.jpg" alt="">
-        <figcaption>
-          <span>makhloogh</span>
-          <span>Googoosh</span>
-          <i class="bi bi-play">
-            <i class="bi bi-three-dots-vertical"></i>
-          </i>
-        </figcaption>
-      </figure>
-      <audio id="audio5" src="asset/audio/Googoosh - Makhloogh [320].mp3"></audio>
-    </div>
-    <div class="six">
-      <figure>
-        <img src="asset/img/shadmehr-hadis.jpg" alt="">
-        <figcaption>
-          <span>hadis mehrabooni</span>
-          <span>shadmehr aghili</span>
-          <i class="bi bi-play">
-            <i class="bi bi-three-dots-vertical"></i>
-          </i>
-        </figcaption>
-      </figure>
-      <audio id="audio6" src="asset/audio/Shadmehr Aghili-Hadis Mehraboni.mp3"></audio>
-    </div>
-  </div>
-  <!-- /////////////////////////////////////////////////////////// -->
-  <div class="downmenu">
 
-    <!-- ///////////////////////////samte chap////////////////////////// -->
-    <figure class="samtechap">
-      <img src="asset/img/ali.jpg" alt=" ">
+
+  <div class="flex">
+  
+  <figure class="song-item" data-index="1">
+    <img src="asset/img/1.jpg" alt="">
+    <figcaption>moein</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="2">
+    <img src="asset/img/darush.jpg" alt="">
+    <figcaption>darush</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="3">
+    <img src="asset/img/shadmehr-hadis.jpg" alt="">
+    <figcaption>shadmehr</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="4">
+    <img src="asset/img/Googoosh.jpg" alt="">
+    <figcaption>googoosh</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="5">
+    <img src="asset/img/Ebi-Delpoosh.jpg" alt="">
+    <figcaption>Ebi-Delpoosh</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="6">
+    <img src="asset/img/2.jpg" alt="">
+    <figcaption>moein</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="7">
+    <img src="asset/img/shaye.jfif" alt="">
+    <figcaption>shaye</figcaption>
+  </figure>
+ 
+  <figure class="song-item" data-index="8">
+    <img src="asset/img/hossein.jfif" alt="">
+    <figcaption>hossein</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="9">
+    <img src="asset/img/Yas-Man-Edameh-Midam.jpg" alt="">
+    <figcaption>yas</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="10">
+    <img src="asset/img/hamid-sefat-alo-khoda1.jpg" alt="">
+    <figcaption>hamid sefat</figcaption>
+  </figure>
+
+  <figure class="song-item" data-index="11">
+    <img src="asset/img/دانلود-اهنگ-های-مهراد-هیدن.webp" alt="">
+    <figcaption>mehrad hidden</figcaption>
+  </figure>
+
+  
+  <figure class="song-item" data-index="12">
+    <img src="asset/img/bahram.webp" alt="">
+    <figcaption>bahram</figcaption>
+  </figure>
+
+  </div>
+
+
+
+  <div class="tanzimat">
+    <figure class="moshakhasat">
+      <img src="" alt="">
       <figcaption>
+        <h2 class="artist"></h2>
+        <p class="music"></p>
       </figcaption>
     </figure>
-    <!-- ////////////////////////////////////////////// -->
-
-
-
-
-
-
-
-    <!-- ///////////////////////////vasT//////////////////////
-      -->
-    <div class="tanzimat">
-     
-      <i id="back" class="bi bi-skip-backward-fill"></i>
-      <i id="play" class="bi bi-play-fill"></i>
-      <i id="pause" class="bi bi-pause"></i>
-      <i id="next" class="bi bi-skip-forward-fill"></i>
-      <i id="like" class="bi bi-heart"></i>
+    <audio id="audio" src=""></audio>
+    <div class="clicks">
+      <i id="next" class="bi bi-skip-backward-circle"></i>
+      <i id="play" class="bi bi-play-circle"></i>
+      <i id="pause" class="bi bi-pause-circle"></i>
+      <i id="back" class="bi bi-fast-forward-circle"></i>
     </div>
-    <!-- //////////////////////////////////////////////////////// -->
     <div class="progress">
-      <span class="progressbar">
-        <span class="circle"></span>
-      </span>
+      <div class="progressbar"></div>
     </div>
-    <div class="addad">
-      <h3 class="timeup">00:00</h3>
+    <div class="timer">
+      <h3 class="duration"></h3>
       <span>/</span>
-      <h3 class="kamel">00:00</h3>
+      <h3 class="curenttime"></h3>
     </div>
+    <div class="volume-control">
+      <i id="mute" class="bi bi-volume-mute-fill"></i>
+      <i id="turnon" class="bi bi-volume-up-fill"></i>
+
+      <input type="range" id="volume" min="0" max="1" step="0.1" value="0.5">
+    </div>
+
   </div>
 
-  <div class="profile">
-    <img src="asset/img/logo.jpg" alt="">
-    <h1 class="edit">Media Pleyer <br>
-      coded by <br>Ali khazaei</h1>
-    
-  </div>
-  <div class="nav">
-    <ul>
-      <li>playlist</li>
-      <li>artits</li>
-      <li>album</li>
-      
-    </ul>
-  </div>
-</main>
- <!-- profile -->
+  <!-- ///////////////////////////////////////////////////
+    -->
+    <div class="profile">
+      <h1 class="edit">Media Pleyer <br>
+        coded by Ali khazaei</h1>
+    </div>
+     <!-- profile -->
  <div class="box">
   <img src="asset/img/profit.jpg" alt="">
   <a href="nstagram.com/ali_khazaei_developer/">
